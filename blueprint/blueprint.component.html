@@ -1,0 +1,30 @@
+<div class="card card-custom gutter-b mb-5">
+    <div class="card-header">
+        <div class="card-title d-flex justify-content-between align-items-center w-100">
+            <h3 class="card-label">
+                CO Floor Plan
+            </h3>
+            <div ngbDropdown class="d-inline-block">
+                <button class="btn btn-primary" id="dropdownBasic1" ngbDropdownToggle>Add Items</button>
+                <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                    <!-- <button ngbDropdownItem (click)="addItem('table3x3')">Table 3x3</button> -->
+                    <button ngbDropdownItem (click)="addItem('table')">Table</button>
+                    <button ngbDropdownItem (click)="addItem('vertical')">Wall (Vertical)</button>
+                    <button ngbDropdownItem (click)="addItem('horizontal')">Wall (Horizontal)</button>
+                    <button ngbDropdownItem (click)="addItem('chair')">Chair</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="wall-boundary" style="background-color: #858A7E;
+    background-size: 29px 29px;
+    background-repeat: repeat;
+    width: auto;
+    height: 70vh;
+    overflow: auto;
+    position: relative;">
+    <app-objects></app-objects>
+    <app-table></app-table>
+</div> 

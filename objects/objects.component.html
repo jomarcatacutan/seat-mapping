@@ -1,0 +1,19 @@
+<div class="object-box" *ngFor="let item of draggableItems" [class.highlighted-item]="selectedItem === item" cdkDragBoundary=".wall-boundary" cdkDrag
+    (cdkDragEnded)="onDragEnd($event, item)">
+    <img id="img-{{ item.id }}" [src]="item.imageUrl" alt="wall" (dblclick)="openModal(content, item)">
+</div>
+
+<!-- Modal Template -->
+<ng-template #content let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title">Edit Configuration</h4>
+        <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body">
+        Other items will be placed here.
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="modal.close('Close click')">Cancel</button>
+        <button type="button" class="btn btn-danger" (click)="removeSelectedItem(modal)">Remove</button>
+    </div>
+</ng-template>

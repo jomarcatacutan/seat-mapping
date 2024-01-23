@@ -1,0 +1,17 @@
+<div class="object-box" *ngFor="let item of draggableItems" cdkDragBoundary=".wall-boundary" cdkDrag
+    (cdkDragEnded)="onDragEnd($event, item)">
+    <div class="chair-container">
+        <div class="row-top d-flex justify-content-around">
+            <img src="./assets/media/images/chair.png" alt="chair">
+            <img src="./assets/media/images/chair.png" alt="chair">
+            <img src="./assets/media/images/chair.png" alt="chair">
+        </div>
+        <img id="img-{{ item.id }}" [src]="item.imageUrl" alt="wall">
+        <div class="row-bottom d-flex justify-content-around">
+            <img src="./assets/media/images/chair.png" alt="chair">
+            <img src="./assets/media/images/chair.png" alt="chair">
+            <img src="./assets/media/images/chair.png" alt="chair">
+        </div>
+    </div>
+    <button (click)="removeDraggableItem(draggableItems.indexOf(item))">Remove</button>
+</div>
